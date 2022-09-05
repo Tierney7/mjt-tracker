@@ -1,0 +1,32 @@
+{
+  "name": "mjt-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tierney7/mjt-tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tierney7/mjt-tracker/issues"
+  },
+  "homepage": "https://github.com/Tierney7/mjt-tracker#readme",
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "dotenv": "^16.0.2",
+    "inquirer": "^8.2.4",
+    "mysql2": "^2.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
