@@ -8,7 +8,6 @@ const db = mysql.createConnection(
         password: 'password',
         database: 'employee_db'
     },
-
 );
 
 const deptChoices = async () => {
@@ -38,12 +37,11 @@ async function employee() {
 
     await inquirer
         .prompt([
-
             {
                 type: 'list',
                 name: 'tasks',
-                message: 'What would you like to do?',
-                choices: ['View All Employees', 'View All Roles', 'View All Departments', 'Add Employee', 'Update Employee Role', 'Add Role', 'Add Department', 'Quit']
+                message: 'Please select a task:',
+                choices: ['View All Employees', 'View All Roles', 'View All Departments', 'Add Employee', 'Add Role', 'Add Department', 'Change Employee role', 'Quit']
             },
             {
                 type: 'input',
@@ -51,7 +49,6 @@ async function employee() {
                 message: 'Enter first name:',
                 when: (answers) => answers.tasks === 'Add Employee'
             },
-
             {
                 type: 'input',
                 name: 'last_name',
@@ -95,14 +92,14 @@ async function employee() {
                 name: 'updateEmpName',
                 message: 'Enter employee you wish to update:',
                 choices: names[0],
-                when: (answers) => answers.tasks === 'Update Employee Role'
+                when: (answers) => answers.tasks === 'Change Employee Role'
             },
             {
                 type: 'list',
                 name: 'updateRole',
                 message: 'Enter new employee title:',
                 choices: roles[0],
-                when: (answers) => answers.tasks === 'Update Employee Role'
+                when: (answers) => answers.tasks === 'Change Employee Role'
             },
 
         ])
@@ -205,7 +202,7 @@ async function restartApp() {
             {
                 type: 'confirm',
                 name: 'restart',
-                message: 'Do you wish to continue?'
+                message: 'Would you like to continue?'
             },
         ])
         .then((data) => {
